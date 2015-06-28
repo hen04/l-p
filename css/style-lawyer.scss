@@ -1,0 +1,669 @@
+/**
+ * Description: css for lawyer company.
+ * Version: 1.0.0
+ * Last update: 2015/03/14
+ * Author: Nadezhda Degtyareva
+ *
+ * Summary:
+ *
+ *	0. RESET
+ *	1. TOTAL STYLES
+ *	2. HEADER
+ *		- 2.1. menu
+ *	3. MAIN
+ *		- 3.1. consult-info
+ *		- 3.2. faq
+ *		- 3.3. main text
+ *	4. FOOTER
+ *	5. CONTACTS
+ *		- 5.1. content-l
+ *		- 5.2. content-r
+ *		- 5.3. form contacts
+  */
+
+/* ==========================================================================
+   0. RESET
+   ========================================================================== */
+p, 
+a, 
+html, 
+body, 
+div, 
+span, 
+img, 
+sub, 
+sup, 
+ul, 
+ol, 
+li, 
+label, 
+form, 
+fieldset, 
+button, 
+table, 
+tr, 
+th, 
+td, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+hr, 
+header, 
+nav, 
+section, 
+article, 
+aside, 
+footer, 
+menu, 
+input, 
+textarea, 
+iframe {
+	margin:0; 
+	padding:0; 
+	border:0; 
+	outline:0;
+}
+table {
+	border-collapse:collapse; 
+	border-spacing:0; 
+}
+header, 
+nav, 
+section, 
+article, 
+aside, 
+footer, 
+menu, 
+main {
+	display:block;
+}
+menu li {
+	list-style: none;
+}
+
+/* ==========================================================================
+   1. TOTAL STYLES
+   ========================================================================== */
+$font-normal: 'Heuristica-Regular', sans-serif;
+$font-bold: 'Heuristica-Bold', sans-serif;
+$font-italic: 'Heuristica-Italic', sans-serif;
+$font-fix: 'MyriadPro-Cond', sans-serif;
+$font-fix-bold: 'MyriadPro-BoldCond', sans-serif;
+
+@font-face {
+  font-family: 'Heuristica-Regular';
+  src: url('../fonts/Heuristica-Regular.eot');
+  src: url('../fonts/Heuristica-Regular.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Heuristica-Regular.svg') format('svg'), 
+  url('../fonts/Heuristica-Regular.woff') format('woff'), 
+  url('../fonts/Heuristica-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'Heuristica-Bold';
+  src: url('../fonts/Heuristica-Bold.eot');
+  src: url('../fonts/Heuristica-Bold.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Heuristica-Bold.svg') format('svg'), 
+  url('../fonts/Heuristica-Bold.woff') format('woff'), 
+  url('../fonts/Heuristica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'Heuristica-Italic';
+  src: url('../fonts/Heuristica-Italic.eot');
+  src: url('../fonts/Heuristica-Italic.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/Heuristica-Italic.svg') format('svg'), 
+  url('../fonts/Heuristica-Italic.woff') format('woff'), 
+  url('../fonts/Heuristica-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;  
+}
+@font-face {
+  font-family: 'MyriadPro-Cond';
+  src: url('../fonts/MyriadPro-Cond.eot');
+  src: url('../fonts/MyriadPro-Cond.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/MyriadPro-Cond.svg') format('svg'), 
+  url('../fonts/MyriadPro-Cond.woff') format('woff'), 
+  url('../fonts/MyriadPro-Cond.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MyriadPro-BoldCond';
+  src: url('../fonts/MyriadPro-BoldCond.eot');
+  src: url('../fonts/MyriadPro-BoldCond.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/MyriadPro-BoldCond.svg') format('svg'), 
+  url('../fonts/MyriadPro-BoldCond.woff') format('woff'), 
+  url('../fonts/MyriadPro-BoldCond.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;  
+}
+
+html {
+  font-size: 10px;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+	background-color: #fff;
+  font-family: $font-normal;
+  color: #000;
+}
+
+.all-content {
+	min-height: 100%;
+	height: auto !important;
+	min-width: 1140px;
+}
+.wrapper {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+main {
+  overflow: hidden;
+  padding-bottom: 140px;
+  position: relative;
+}
+footer {
+	position: relative;
+	margin: -110px auto 0 !important;
+	height: 110px;
+	background-color: #272727;
+}
+p {
+  font-size: 1.6em;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+ul {
+	margin-bottom: 35px;
+	li {
+	  font-size: 1.6em;
+	  line-height: 20px;
+	  margin: 0 0 8px 26px;
+	  padding-left: 15px;
+	  list-style: none;
+	  background: url(images/li.gif) 0 4px no-repeat;
+	  &.active {
+	  	color: #900;
+	  }
+	}
+}
+a {
+  color: #000099;
+  transition: all .15s linear;
+}
+	a:hover {
+		text-decoration: none;
+	}
+.row {
+  @extend .clearfix;
+}
+.col-2 {
+	width: 50%;
+  float: left;
+}
+.col-3 {
+	width: 31%;
+	float: right;
+}
+.col-4 {
+	width: 66%;
+	float: left;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+	}
+.clear {
+  clear: both;
+}
+.mb_20 {
+	margin-bottom: 20px;
+}
+.mb_30 {
+	margin-bottom: 30px;
+}
+.clearfix {
+	&:before, 
+	&:after {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+h3 {
+	font-family: $font-fix;
+	font-weight: 400;
+	color: #000;
+	font-size: 3em;
+	margin-bottom: 38px;
+	line-height: 40px;
+}
+h4 {
+	font-weight: 400;
+	font-size: 2.2em;
+	color: #900;
+	line-height: 28px;
+	margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   2. HEADER
+   ========================================================================== */
+	.logo-phone {
+		background-color: #272727;
+		height: 105px;
+		box-sizing: border-box;
+	}
+		.logo {
+			margin-top: 20px;
+			float: left;
+		}
+		.top-phone {
+			font-family: $font-fix;
+			text-transform: uppercase;
+			float: right;
+			padding-top: 42px;
+			color: #fff;
+			font-size: 2.3em;
+			span {
+				color: #fbc216;
+			}
+		}
+	.header-banner {
+		background: url(images/banner-main.jpg) 50% 0 no-repeat;
+	}
+	.banner-txt {
+		box-sizing: border-box;
+		h1 {
+			color: #fff;
+			font-family: $font-fix;
+			font-weight: 400;
+		}
+	}
+	.banner-txt-main {
+		padding-top: 52px;
+		height: 214px;
+		h1 {
+			font-size: 6.7em;
+			text-transform: uppercase;
+			margin-bottom: 13px;
+		}
+		p {
+			font-family: $font-fix;
+			font-size: 2.8em;
+			color: #fff;
+		}
+	}
+	.banner-txt-sub {
+		padding-top: 23px;
+		height: 114px;
+		h1 {
+			font-size: 5.7em;
+		}
+	}
+
+
+/* 2.1. menu
+   ========================================================================== */
+.main-menu {
+	height: 79px;
+	padding-top: 25px;
+	box-sizing: border-box;
+	background: url(images/menu.png) 0 0 repeat-x;
+	overflow: hidden;
+	li {
+		float: left;
+		font-family: $font-fix-bold;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin: 0 12px;
+		text-shadow: 1px 1px 0 rgba(0,0,0, .6);
+		a {
+			font-size: 1.9em;
+			color: #fff;
+			text-decoration: none;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		&.active, 
+		&:hover {
+			a {
+				color: #fbc216;
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   3. MAIN
+   ========================================================================== */
+/* 3.1. consult-info
+   ========================================================================== */
+.main-text p {
+	margin-bottom: 4px;
+}
+.consult-info {
+	height: 322px;
+	padding-top: 27px;
+	box-sizing: border-box;
+}
+.quote {
+	margin-bottom: 22px;
+	overflow: hidden;
+}
+.quote-txt {
+	line-height: 28px;
+	box-sizing: border-box;
+	padding: 0 65px;
+	margin-top: 17px;
+	background: url(images/quote-r.png) 100% 90% no-repeat;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 40px;
+		height: 26px;
+		background: url(images/quote-l.png) 0 0 no-repeat;
+		margin-left: -65px;
+	}
+}
+.quote-txt--main {
+	width: 650px;
+	font-size: 2.2em;
+	color: #000;
+}
+.quote-txt--big {
+	font-size: 2.9em;
+	color: #777;
+	line-height: 37px;
+	margin-bottom: 30px;
+}
+.quote-name {
+	color: #666;
+	font-weight: 700;
+	font-size: 1.6em;
+	text-align: right;
+	padding-right: 70px;
+}
+.btn {
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	box-sizing: border-box;
+	color: #000;
+	background: rgb(250,211,30); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhZDMxZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGIwMGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(250,211,30,1) 0%, rgba(253,176,12,1) 100%); /* FF3.6+ */
+	background-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(250,211,30,1)), color-stop(100%,rgba(253,176,12,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(250,211,30,1) 0%,rgba(253,176,12,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(250,211,30,1) 0%,rgba(253,176,12,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(250,211,30,1) 0%,rgba(253,176,12,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(250,211,30,1) 0%,rgba(253,176,12,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fad31e', endColorstr='#fdb00c',GradientType=0 ); /* IE6-8 */
+}
+.btn-consult {
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	height: 60px;
+	padding-top: 10px;
+	span {
+		font-size: 2em;
+		text-transform: uppercase;
+		font-family: $font-bold;
+		background: url(images/consult.png) 100% 0 no-repeat;
+		padding: 7px 70px 10px 0;
+	}
+}
+.consult-info-img {
+	img {
+		margin-right: 70px;
+	}
+}
+/* 3.2. faq
+   ========================================================================== */
+.faq {
+	height: 158px;
+	border-top: 1px solid #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+	padding-top: 43px;
+	margin: 0 -15px;
+	box-sizing: border-box;
+	margin-bottom: 45px;
+	background: rgb(242,242,242); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMmUyZTIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(242,242,242,1) 0%, rgba(226,226,226,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,242,242,1)), color-stop(100%,rgba(226,226,226,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-8 */
+	img {
+		margin-right: 28px;
+		float: left;
+	}
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+}
+	.faq-item {
+		margin: 0 130px 0 100px;
+		h5 {
+			font-family: $font-fix;
+			font-weight: 400;
+			font-size: 2.6em;
+			line-height: 26px;
+			color: #980e07;
+			display: inline-block;
+			margin-bottom: 10px;
+			border-bottom: 1px dashed #f9d627;
+		}
+		p {
+			font-size: 1.6em;
+			line-height: 20px;
+		}
+	}
+
+/* 3.3. main text
+   ========================================================================== */
+.blog-sm {
+	margin-bottom: 75px;
+	p {
+		color: #333;
+	}
+}
+
+
+/* ==========================================================================
+   4. FOOTER
+   ========================================================================== */
+.footer-l {
+	float: left;
+	width: 385px;
+	padding-top: 40px;
+	box-sizing: border-box;
+	p {
+		color: #f9d518;
+		font-size: 1.8em;
+		font-family: myriad pro, sans-serif;
+	}
+}
+	.social-icons {
+		float: left;
+		a {
+			width: 34px;
+			height: 34px;
+			float: left;
+			background: url(images/social-icons.png) no-repeat;
+			padding: 0;
+			margin: 38px 9px 0 0;
+		}
+		.gg {
+			background-position: 0 0;
+		}
+		.fb {
+			background-position: -42px 0;
+		}
+		.in {
+			background-position: -84px 0;
+		}
+		.tw {
+			background-position: -126px 0;
+		}
+		.rs {
+			background-position: -168px 0;
+		}
+	}
+.footer-r {
+	float: right;
+	width: 365px;
+	padding-top: 40px;
+	box-sizing: border-box;
+	p {
+		color: #f9d518;
+		font-size: 1.8em;
+		font-family: myriad pro, sans-serif;
+		a {
+			color: #f9d518;
+			font-weight: 700;
+			text-decoration: none;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   5. CONTACTS
+   ========================================================================== */
+.content {
+	padding: 35px 0 100px;
+}
+
+/* 5.1. content-l
+   ========================================================================== */
+.content-l img {
+	margin-bottom: 15px;
+}
+.lawyer-item {
+	margin-bottom: 40px;
+	img {
+		float: left;
+		margin-right: 25px;
+	}
+}
+	.lawyer-txt {
+		float: left;
+		width: 500px;
+		p {
+			font-size: 1.8em;
+			margin-bottom: 0;
+		}
+		.name {
+			font-weight: 700;
+			margin-bottom: 30px;
+		}
+	}
+
+
+/* 5.2. content-r
+   ========================================================================== */
+.content-r {
+	h3 {
+		margin-bottom: 10px;
+	}
+}
+.menu-right {
+	margin-bottom: 44px;
+	li {
+		border-bottom: 1px solid #dcdcdc;
+		height: 40px;
+		padding: 7px 15px;
+		box-sizing: border-box;
+		&:first-child {
+			border-top: 1px solid #dcdcdc;
+		}
+		a {
+			font-size: 1.8em;
+			color: #900;	
+			text-decoration: none;
+		}
+		&.active,
+		&:hover {
+			background-color: #fef3c1;
+		}
+	}
+}
+
+.connect-info {
+	margin-bottom: 27px;
+	p {
+		font-family: $font-italic;
+		font-style: italic;
+		margin-bottom: 0;
+	}
+}
+
+
+/* 5.3. form contacts
+   ========================================================================== */
+.form-contacts {
+	label {
+		font-size: 1.8em;
+		font-weight: 700;
+		margin-bottom: 5px;
+		display: block;
+		cursor: pointer;
+	}
+}
+	.inp-coord, 
+	.ta-coord {
+		display: block;
+		width: 100%;
+		border: 1px solid #dcdcdc;
+		font-size: 1.6em;
+		box-sizing: border-box;
+		font-family: arial;
+	}
+	.inp-coord {
+		height: 38px;
+		margin-bottom: 20px;
+		padding: 0 5px;
+	}
+	.ta-coord {
+		height: 120px;
+		resize: none;
+		margin-bottom: 33px;
+		padding: 5px;
+	}
+	.btn-submit {
+		height: 40px;
+		box-sizing: border-box;
+		font-size: 1.9em;
+		text-transform: uppercase;
+		font-family: $font-bold;
+		padding-top: 7px;
+	}
